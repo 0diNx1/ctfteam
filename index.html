@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dp!h3r0x — CTF Cybersecurity Team</title>
+
+  <!-- Google Fonts: Orbitron (display) + Share Tech Mono (mono body) + Rajdhani (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== SCANLINE OVERLAY ========== -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- ========== CURSOR GLOW ========== -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ====================================
+       NAVIGATION
+  ===================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">DPI</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"    class="nav-link" data-text="Home">Home</a></li>
+        <li><a href="#about"   class="nav-link" data-text="About">About</a></li>
+        <li><a href="#members" class="nav-link" data-text="Members">Members</a></li>
+        <li><a href="#comps"   class="nav-link" data-text="Comps">Competitions</a></li>
+        <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ====================================
+       HERO SECTION
+  ===================================== -->
+  <section id="home" class="hero">
+
+    <!-- Background grid + particles -->
+    <div class="hero-grid" aria-hidden="true"></div>
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero-content">
+      <!-- Status badge -->
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-label">ONLINE // OPERATIONAL</span>
+      </div>
+
+      <!-- Main heading -->
+      <h1 class="hero-title">
+        <span class="title-line-1">LOLO</span>
+        <span class="title-line-2">dp!h3r0x</span>
+        <span class="title-cursor" aria-hidden="true">_</span>
+      </h1>
+
+      <!-- Typing tagline -->
+      <p class="hero-tagline">
+        <span class="tagline-prefix">&gt;&nbsp;</span>
+        <span id="typingText" class="typing-text"></span>
+        <span class="typing-cursor" aria-hidden="true">|</span>
+      </p>
+
+      <!-- Stat pills -->
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="stat-num">100+</span>
+          <span class="stat-label">CTFs Completed(global & nation)</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Top-10 Finishes</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Active Members</span>
+        </div>
+      </div>
+
+      <!-- CTA buttons -->
+      <div class="hero-cta">
+        <a href="#members" class="btn btn-primary">
+          <i class="fas fa-users"></i> Meet the Team
+        </a>
+        <a href="#comps" class="btn btn-ghost">
+          <i class="fas fa-trophy"></i> View Results
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll caret 
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <span class="scroll-label">SCROLL</span>
+      <i class="fas fa-chevron-down scroll-arrow"></i>
+    </a>
+    -->
+  </section>
+
+  <!-- ====================================
+       ABOUT SECTION
+  ===================================== -->
+  <section id="about" class="about section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">// 01</span>
+        <h2 class="section-title">About <span class="accent">Us</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: description -->
+        <div class="about-text glass-card">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-corner bl"></div>
+          <div class="card-corner br"></div>
+
+          <p class="about-desc">
+            We are an intermediate-level CTF team passionate about cybersecurity.Continuously improving our skills in web, OSINT, crypto, Rev and forensics.We participate in competitive CTF events to challenge and grow ourselves.Driven by curiosity, teamwork, and the mindset to never stop learning.
+          </p>
+          <p class="about-desc">
+            Our methodology is simple: no black box is unopened, no cipher is unbroken, and no flag is uncaptured. We compete on global platforms and constantly push the boundaries of our skills.
+          </p>
+
+          <div class="about-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar-alt meta-icon"></i>
+              <div>
+                <span class="meta-label">Founded</span>
+                <span class="meta-value">2023</span>
+              </div>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-map-marker-alt meta-icon"></i>
+              <div>
+                <span class="meta-label">Based In</span>
+                <span class="meta-value">Bangladesh</span>
+              </div>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-flag meta-icon"></i>
+              <div>
+                <span class="meta-label">Flags Captured</span>
+                <span class="meta-value">1000+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: focus areas -->
+        <div class="about-skills">
+          <h3 class="skills-title">Focus Areas</h3>
+          <div class="skill-grid">
+            <div class="skill-tag" data-glow="cyan">
+              <i class="fas fa-globe"></i>
+              <span>Web Exploitation</span>
+            </div>
+            <div class="skill-tag" data-glow="green">
+              <i class="fas fa-microchip"></i>
+              <span>Reverse Engineering</span>
+            </div>
+            <div class="skill-tag" data-glow="purple">
+              <i class="fas fa-key"></i>
+              <span>Cryptography</span>
+            </div>
+            <div class="skill-tag" data-glow="yellow">
+              <i class="fas fa-search"></i>
+              <span>Forensics</span>
+            </div>
+            <div class="skill-tag" data-glow="red">
+              <i class="fas fa-terminal"></i>
+              <span>Binary Exploitation</span>
+            </div>
+            <div class="skill-tag" data-glow="blue">
+              <i class="fas fa-binoculars"></i>
+              <span>OSINT</span>
+            </div>
+            <div class="skill-tag" data-glow="cyan">
+              <i class="fas fa-network-wired"></i>
+              <span>Network Analysis</span>
+            </div>
+            <div class="skill-tag" data-glow="green">
+              <i class="fas fa-code"></i>
+              <span>Scripting & Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================
+       TEAM MEMBERS SECTION
+  ===================================== -->
+  <section id="members" class="members section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">// 02</span>
+        <h2 class="section-title">The <span class="accent">Crew</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="members-grid">
+
+        <!-- ---- MEMBER 1 ---- -->
+        <article class="member-card glass-card">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-corner bl"></div>
+          <div class="card-corner br"></div>
+
+          <div class="member-header">
+            <div class="member-avatar-wrap">
+              <div class="member-avatar" aria-label="Profile photo placeholder">
+                <i class="fas fa-user-secret avatar-icon"></i>
+              </div>
+              <span class="member-status online" title="Online"></span>
+            </div>
+            <div class="member-id">
+              <span class="member-uid">0x01</span>
+              <div class="member-role-badge">CTF Player</div>
+            </div>
+          </div>
+
+          <div class="member-body">
+            <h3 class="member-name">0x5nnbb</h3>
+            <p class="member-bio">
+              specializes in Open-Source Intelligence (OSINT), uncovering hidden information from publicly available sources. With strong research skills and attention to detail, they excel at tracing digital footprints, analyzing metadata, and connecting scattered clues to solve investigative challenges.
+            </p>
+          </div>
+
+          <div class="member-footer">
+            <div class="member-tags">
+          <!--    <span class="mtag">SQLi</span>
+              <span class="mtag">XSS</span>
+              <span class="mtag">OAuth</span>
+              <span class="mtag">SSRF</span> -->
+              <span class="mtag">OSINT</span>
+            </div>
+            <div class="member-socials">
+              <a href="#" class="social-link" aria-label="GitHub" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://x.com/1mdnayem" class="social-link" aria-label="Twitter/X" title="Twitter/X">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+              <a href="mailto:dpih3rox2@gmail.com" class="social-link" aria-label="Email" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ---- MEMBER 2 ---- -->
+        <article class="member-card glass-card featured">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-corner bl"></div>
+          <div class="card-corner br"></div>
+
+          <div class="featured-label">TEAM LEAD</div>
+
+          <div class="member-header">
+            <div class="member-avatar-wrap">
+              <div class="member-avatar" aria-label="Profile photo placeholder">
+                <i class="fas fa-user-secret avatar-icon"></i>
+              </div>
+              <span class="member-status online" title="Online"></span>
+            </div>
+            <div class="member-id">
+              <span class="member-uid">0x00</span>
+              <div class="member-role-badge leader">CTF Player</div>
+            </div>
+          </div>
+
+          <div class="member-body">
+            <h3 class="member-name">0xodinx</h3>
+            <p class="member-bio">
+              Focuses on Web Exploitation and Digital Forensics. Skilled in identifying vulnerabilities in web applications and analyzing artifacts, logs, and hidden data, they approach challenges methodically to uncover weaknesses and reconstruct digital evidence.
+            </p>
+          </div>
+
+          <div class="member-footer">
+            <div class="member-tags">
+              <span class="mtag">WEB</span>
+              <span class="mtag">FORENSICS</span>
+             <!-- <span class="mtag">Heap</span>
+              <span class="mtag">IDA</span> -->
+            </div>
+            <div class="member-socials">
+              <a href="https://github.com/0diNx1" class="social-link" aria-label="GitHub" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/md-indadul-matubbar-32423839a/" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://x.com/0xodinx" class="social-link" aria-label="Twitter/X" title="Twitter/X">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+              <a href="mailto:heroxatp@gmail.com" class="social-link" aria-label="Email" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ---- MEMBER 3 ---- -->
+        <article class="member-card glass-card">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-corner bl"></div>
+          <div class="card-corner br"></div>
+
+          <div class="member-header">
+            <div class="member-avatar-wrap">
+              <div class="member-avatar" aria-label="Profile photo placeholder">
+                <i class="fas fa-user-secret avatar-icon"></i>
+              </div>
+              <span class="member-status away" title="Away"></span>
+            </div>
+            <div class="member-id">
+              <span class="member-uid">0x02</span>
+              <div class="member-role-badge crypto">CTF Player</div>
+            </div>
+          </div>
+
+          <div class="member-body">
+            <h3 class="member-name">H4x4b1r</h3>
+            <p class="member-bio">
+              Dedicated to Cryptography challenges, breaking ciphers and analyzing encryption schemes. With a strong understanding of mathematical concepts and attack techniques, they enjoy decoding complex puzzles and uncovering hidden messages within encrypted data.
+            </p>
+          </div>
+
+          <div class="member-footer">
+            <div class="member-tags">
+              <span class="mtag">RSA</span>
+              <span class="mtag">ECC</span>
+              <span class="mtag">Lattice</span>
+              <!--span class="mtag">Steganography</span-->
+            </div>
+            <div class="member-socials">
+              <a href="#" class="social-link" aria-label="GitHub" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://x.com/H4x4b1r" class="social-link" aria-label="Twitter/X" title="Twitter/X">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+              <a href="mailto:h4x4b1r@gmail.com" class="social-link" aria-label="Email" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /members-grid -->
+    </div>
+  </section>
+
+  <!-- ====================================
+       COMPETITIONS SECTION
+  ===================================== -->
+  <section id="comps" class="competitions section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">// 03</span>
+        <h2 class="section-title">Battle <span class="accent">Log</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Filter pills -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="2026">2026</button>
+        <button class="filter-btn" data-filter="2025">2025</button>
+        <button class="filter-btn" data-filter="2024">2024</button>
+      </div>
+
+      <!-- Table wrapper -->
+      <div class="table-wrap glass-card">
+        <div class="card-corner tl"></div>
+        <div class="card-corner tr"></div>
+        <div class="card-corner bl"></div>
+        <div class="card-corner br"></div>
+
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th><i class="fas fa-flag"></i> Competition</th>
+              <th><i class="fas fa-server"></i> Platform</th>
+              <th><i class="fas fa-calendar"></i> Year</th>
+              <th><i class="fas fa-medal"></i> Rank / Achievement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-year="2026">
+              <td class="comp-name">0xL4ugh CTF v5</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2026</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i>365th Place</span></td>
+            </tr>
+            <tr data-year="2026">
+              <td class="comp-name">KnightCTF 2026</td>
+              <td><span class="platform-badge dc">CTFtime</span></td>
+              <td>2026</td>
+              <td><span class="rank bronze"><i class="fas fa-award"></i>389th Place</span></td>
+            </tr>
+            <tr data-year="2026">
+              <td class="comp-name">Pragyan CTF 2026</td>
+              <td><span class="platform-badge dc">CTFtime</span></td>
+              <td>2026</td>
+              <td><span class="rank bronze"><i class="fas fa-award"></i>204th Place</span></td>
+            </tr>
+            <tr data-year="2026">
+              <td class="comp-name">0xFUN CTF 2026</td>
+              <td><span class="platform-badge dc">CTFtime</span></td>
+              <td>2026</td>
+              <td><span class="rank bronze"><i class="fas fa-award"></i>384th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">TRX CTF 2025</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>201th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">b01lers CTF 2025</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>221th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">picoMini by CMU-Africa</td>
+              <td><span class="platform-badge htb">picoCTF</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>28th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">NahamCon CTF 2025</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>386th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">Grey Cat The Flag 2025</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>171th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">DIVER OSINT CTF 2025</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>287th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">cornCTF 2025</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>114th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">BDSec CTF 2025</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>116th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">h4ckc0n 2025</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>46th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">Nullcon Berlin HackIM 2025 CTF</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>159th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">WatCTF F25</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>116th Place</span></td>
+            </tr>
+            <tr data-year="2025" class="row-gold">
+              <td class="comp-name">WatCTF F25</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank gold"><i class="fas fa-trophy"></i>116th Place</span></td>
+            </tr>
+            <tr data-year="2025">
+              <td class="comp-name">07CTF</td>
+              <td><span class="platform-badge ctftime">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i>66th Place</span></td>
+            </tr>
+            <tr data-year="2025">
+              <td class="comp-name">K17 CTF</td>
+              <td><span class="platform-badge ctftime">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i>119th Place</span></td>
+            </tr>
+            <tr data-year="2025">
+              <td class="comp-name">QnQSec CTF 2025</td>
+              <td><span class="platform-badge ctftime">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i>213th Place</span></td>
+            </tr>
+            <tr data-year="2025">
+              <td class="comp-name">DEADFACE CTF 2025</td>
+              <td><span class="platform-badge ctftime">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i>295th Place</span></td>
+            </tr>
+            <tr data-year="2025">
+              <td class="comp-name">V1t CTF 2025</td>
+              <td><span class="platform-badge ctftime">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i>202th Place</span></td>
+            </tr>
+            <tr data-year="2025">
+              <td class="comp-name">Haix-la-Chapelle 2025</td>
+              <td><span class="platform-badge ctftime">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i>64th Place</span></td>
+            </tr>
+            <tr data-year="2025">
+              <td class="comp-name">NexHunt CTF</td>
+              <td><span class="platform-badge ctftime">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i>152th Place</span></td>
+            </tr>
+            <tr data-year="2025">
+              <td class="comp-name">KnightCTF 2025</td>
+              <td><span class="platform-badge thm">CTFtime</span></td>
+              <td>2025</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i> 128th Place</span></td>
+            </tr>
+            <tr data-year="2024">
+              <td class="comp-name">Phoenix</td>
+              <td><span class="platform-badge google">Phoenix</span></td>
+              <td>2024</td>
+              <td><span class="rank bronze"><i class="fas fa-award"></i> 100th Place</span></td>
+            </tr>
+            <tr data-year="2024">
+              <td class="comp-name">0xL4ugh CTF</td>
+              <td><span class="platform-badge htb">CTFtime</span></td>
+              <td>2024</td>
+              <td><span class="rank silver"><i class="fas fa-medal"></i>130th Place</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /table-wrap -->
+
+    </div>
+  </section>
+
+  <!-- ====================================
+       CONTACT SECTION
+  ===================================== -->
+  <section id="contact" class="contact section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">// 04</span>
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Blurb -->
+        <div class="contact-blurb glass-card">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-corner bl"></div>
+          <div class="card-corner br"></div>
+
+          <div class="terminal-header">
+            <span class="term-dot red"></span>
+            <span class="term-dot yellow"></span>
+            <span class="term-dot green"></span>
+            <span class="term-title">contact.sh</span>
+          </div>
+
+          <div class="terminal-body">
+            <p class="term-line"><span class="term-prompt">$</span> cat about_contact.txt</p>
+            <p class="term-output">
+              Interested in collaborating on a challenge, sponsoring the team, or just talking shop about CTF strategies? We're always happy to connect with fellow security enthusiasts.
+            </p>
+            <p class="term-line"><span class="term-prompt">$</span> echo "Reach us at:"</p>
+            <p class="term-output accent-text">Reach us at:</p>
+          </div>
+        </div>
+
+        <!-- Contact cards -->
+        <div class="contact-links">
+
+          <a href="mailto:heroxatp@gmail.com" class="contact-card glass-card">
+            <div class="cc-icon-wrap email-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="cc-info">
+              <span class="cc-label">Email Us</span>
+              <span class="cc-value">heroxatp@gmail.com</span>
+            </div>
+            <i class="fas fa-arrow-right cc-arrow"></i>
+          </a>
+
+          <!--a href="https://github.com/yourteam" target="_blank" rel="noopener" class="contact-card glass-card">
+            <div class="cc-icon-wrap github-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="cc-info">
+              <span class="cc-label">GitHub Org</span>
+              <span class="cc-value">github.com/yourteam</span>
+            </div>
+            <i class="fas fa-arrow-right cc-arrow"></i>
+          </a-->
+
+          <a href="https://ctftime.org/team/379860" target="_blank" rel="noopener" class="contact-card glass-card">
+            <div class="cc-icon-wrap ctf-icon">
+              <i class="fas fa-flag"></i>
+            </div>
+            <div class="cc-info">
+              <span class="cc-label">CTFtime Profile</span>
+              <span class="cc-value">ctftime</span>
+            </div>
+            <i class="fas fa-arrow-right cc-arrow"></i>
+          </a>
+
+          <a href="https://discord.gg/ecMPzTCp" target="_blank" rel="noopener" class="contact-card glass-card">
+            <div class="cc-icon-wrap discord-icon">
+              <i class="fab fa-discord"></i>
+            </div>
+            <div class="cc-info">
+              <span class="cc-label">Discord Server</span>
+              <span class="cc-value">discord</span>
+            </div>
+            <i class="fas fa-arrow-right cc-arrow"></i>
+          </a>
+
+        </div><!-- /contact-links -->
+      </div><!-- /contact-grid -->
+
+    </div>
+  </section>
+
+  <!-- ====================================
+       FOOTER
+  ===================================== -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text"></span>
+        <span class="logo-bracket">]</span>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="footerYear"></span> dp!h3r0x. All rights reserved.
+        &nbsp;|&nbsp; Built with <span class="accent">// Raw &amp; AI</span>
+      </p>
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#members">Members</a>
+        <a href="#comps">Competitions</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <!-- decorative bottom line -->
+    <div class="footer-glow-line" aria-hidden="true"></div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
